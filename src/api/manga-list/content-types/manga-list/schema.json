@@ -34,6 +34,44 @@
     },
     "chapters": {
       "type": "integer"
+    },
+    "Categories": {
+      "type": "customField",
+      "options": [
+        "اكشن ",
+        "غموض ",
+        "اثارة ",
+        "ون شوت",
+        "مغامرة",
+        "كوميديا",
+        "دراما",
+        "رعب",
+        "خيالي",
+        "خيال علمي",
+        "شريحة من الحياة",
+        "رياضي",
+        "قوة خارقة",
+        "آليين (ميكا)",
+        "سحر",
+        "تاريخي",
+        ""
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "ملون",
+        "غير ملون"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "مانجا",
+        "مانهوا",
+        "مانها"
+      ]
     }
   }
 }

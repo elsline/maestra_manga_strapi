@@ -409,6 +409,42 @@ export interface ApiMangaListMangaList extends Schema.CollectionType {
     title_ar: Attribute.String;
     cover: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     chapters: Attribute.Integer;
+    Categories: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          '\u0627\u0643\u0634\u0646 ',
+          '\u063A\u0645\u0648\u0636 ',
+          '\u0627\u062B\u0627\u0631\u0629 ',
+          '\u0648\u0646 \u0634\u0648\u062A',
+          '\u0645\u063A\u0627\u0645\u0631\u0629',
+          '\u0643\u0648\u0645\u064A\u062F\u064A\u0627',
+          '\u062F\u0631\u0627\u0645\u0627',
+          '\u0631\u0639\u0628',
+          '\u062E\u064A\u0627\u0644\u064A',
+          '\u062E\u064A\u0627\u0644 \u0639\u0644\u0645\u064A',
+          '\u0634\u0631\u064A\u062D\u0629 \u0645\u0646 \u0627\u0644\u062D\u064A\u0627\u0629',
+          '\u0631\u064A\u0627\u0636\u064A',
+          '\u0642\u0648\u0629 \u062E\u0627\u0631\u0642\u0629',
+          '\u0622\u0644\u064A\u064A\u0646 (\u0645\u064A\u0643\u0627)',
+          '\u0633\u062D\u0631',
+          '\u062A\u0627\u0631\u064A\u062E\u064A',
+          ''
+        ]
+      >;
+    color: Attribute.Enumeration<
+      [
+        '\u0645\u0644\u0648\u0646',
+        '\u063A\u064A\u0631 \u0645\u0644\u0648\u0646'
+      ]
+    >;
+    type: Attribute.Enumeration<
+      [
+        '\u0645\u0627\u0646\u062C\u0627',
+        '\u0645\u0627\u0646\u0647\u0648\u0627',
+        '\u0645\u0627\u0646\u0647\u0627'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
