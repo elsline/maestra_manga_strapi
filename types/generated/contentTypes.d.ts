@@ -445,6 +445,18 @@ export interface ApiMangaListMangaList extends Schema.CollectionType {
         '\u0645\u0627\u0646\u0647\u0627'
       ]
     >;
+    Written_by: Attribute.String;
+    draw_by: Attribute.String;
+    team_name: Attribute.String;
+    state: Attribute.Enumeration<
+      [
+        '\u0645\u0633\u062A\u0645\u0631',
+        '\u0645\u062A\u0648\u0642\u0641',
+        '\u0645\u0643\u062A\u0645\u0644',
+        '\u0648\u0646 \u0634\u0648\u062A'
+      ]
+    >;
+    story: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

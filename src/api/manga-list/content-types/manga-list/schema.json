@@ -72,6 +72,27 @@
         "مانهوا",
         "مانها"
       ]
+    },
+    "Written_by": {
+      "type": "string"
+    },
+    "draw_by": {
+      "type": "string"
+    },
+    "team_name": {
+      "type": "string"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "مستمر",
+        "متوقف",
+        "مكتمل",
+        "ون شوت"
+      ]
+    },
+    "story": {
+      "type": "blocks"
     }
   }
 }
