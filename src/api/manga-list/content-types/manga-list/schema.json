@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manga_lists",
+  "info": {
+    "singularName": "manga-list",
+    "pluralName": "manga-lists",
+    "displayName": "manga_list"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
