@@ -4,7 +4,8 @@
   "info": {
     "singularName": "manga-list",
     "pluralName": "manga-lists",
-    "displayName": "manga_list"
+    "displayName": "manga_list",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,26 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "title_jpn": {
+      "type": "string"
+    },
+    "title_ar": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "chapters": {
+      "type": "integer"
     }
   }
 }
