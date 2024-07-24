@@ -368,6 +368,7 @@ export interface ApiMangaListMangaList extends Schema.CollectionType {
     singularName: 'manga-list';
     pluralName: 'manga-lists';
     displayName: 'manga_list';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -428,7 +429,15 @@ export interface ApiMangaListMangaList extends Schema.CollectionType {
           '\u0637\u0628\u062E',
           '\u0634\u064A\u0627\u0637\u064A\u0646',
           '\u0645\u0627\u0641\u064A\u0627',
-          '\u062D\u064A\u0627\u0629 \u0645\u062F\u0631\u0633\u064A\u0629'
+          '\u062D\u064A\u0627\u0629 \u0645\u062F\u0631\u0633\u064A\u0629',
+          '\u062F\u0631\u0627\u0645\u0627',
+          '\u062E\u0627\u0631\u0642 \u0644\u0644\u0637\u0628\u064A\u0639\u0629',
+          '\u0639\u0633\u0643\u0631\u064A',
+          '\u062E\u064A\u0627\u0644\u064A',
+          '\u0645\u0635\u0627\u0635\u064A \u062F\u0645\u0627\u0621',
+          '\u0631\u0648\u0645\u0627\u0646\u0633\u064A',
+          '\u0645\u0648\u0633\u064A\u0642\u064A',
+          '\u0646\u0641\u0633\u064A'
         ]
       >;
     Written_by: Attribute.String;
