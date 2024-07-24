@@ -362,43 +362,12 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiMangaListMangaList extends Schema.CollectionType {
   collectionName: 'manga_lists';
   info: {
     singularName: 'manga-list';
     pluralName: 'manga-lists';
     displayName: 'manga_list';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -408,36 +377,7 @@ export interface ApiMangaListMangaList extends Schema.CollectionType {
     title_jpn: Attribute.String;
     title_ar: Attribute.String;
     cover: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    chapters: Attribute.Integer;
-    Categories: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          '\u0627\u0643\u0634\u0646 ',
-          '\u063A\u0645\u0648\u0636 ',
-          '\u0627\u062B\u0627\u0631\u0629 ',
-          '\u0648\u0646 \u0634\u0648\u062A',
-          '\u0645\u063A\u0627\u0645\u0631\u0629',
-          '\u0643\u0648\u0645\u064A\u062F\u064A\u0627',
-          '\u062F\u0631\u0627\u0645\u0627',
-          '\u0631\u0639\u0628',
-          '\u062E\u064A\u0627\u0644\u064A',
-          '\u062E\u064A\u0627\u0644 \u0639\u0644\u0645\u064A',
-          '\u0634\u0631\u064A\u062D\u0629 \u0645\u0646 \u0627\u0644\u062D\u064A\u0627\u0629',
-          '\u0631\u064A\u0627\u0636\u064A',
-          '\u0642\u0648\u0629 \u062E\u0627\u0631\u0642\u0629',
-          '\u0622\u0644\u064A\u064A\u0646 (\u0645\u064A\u0643\u0627)',
-          '\u0633\u062D\u0631',
-          '\u062A\u0627\u0631\u064A\u062E\u064A',
-          ''
-        ]
-      >;
-    color: Attribute.Enumeration<
-      [
-        '\u0645\u0644\u0648\u0646',
-        '\u063A\u064A\u0631 \u0645\u0644\u0648\u0646'
-      ]
-    >;
+    story: Attribute.Blocks;
     type: Attribute.Enumeration<
       [
         '\u0645\u0627\u0646\u062C\u0627',
@@ -445,18 +385,55 @@ export interface ApiMangaListMangaList extends Schema.CollectionType {
         '\u0645\u0627\u0646\u0647\u0627'
       ]
     >;
-    Written_by: Attribute.String;
-    draw_by: Attribute.String;
-    team_name: Attribute.String;
+    color: Attribute.Enumeration<
+      [
+        '\u0645\u0644\u0648\u0646',
+        '\u063A\u064A\u0631 \u0645\u0644\u0648\u0646'
+      ]
+    >;
     state: Attribute.Enumeration<
       [
         '\u0645\u0633\u062A\u0645\u0631',
-        '\u0645\u062A\u0648\u0642\u0641',
         '\u0645\u0643\u062A\u0645\u0644',
+        '\u0645\u062A\u0648\u0642\u0641',
         '\u0648\u0646 \u0634\u0648\u062A'
       ]
     >;
-    story: Attribute.Blocks;
+    chapters: Attribute.Integer;
+    Categories: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          '\u0634\u0648\u0646\u064A\u0646 ',
+          '\u0634\u0648\u062C\u0648',
+          '\u0633\u064A\u0646\u064A\u0646',
+          '\u0623\u0643\u0634\u0646',
+          '\u063A\u0645\u0648\u0636',
+          '\u0627\u062B\u0627\u0631\u0629',
+          '\u0645\u063A\u0627\u0645\u0631\u0629',
+          '\u0643\u0648\u0645\u064A\u062F\u064A',
+          '\u062C\u0631\u064A\u0645\u0629',
+          '\u062E\u064A\u0627\u0644 \u0639\u0644\u0645\u064A',
+          '\u0631\u0639\u0628',
+          '\u0634\u0631\u064A\u062D\u0629 \u0645\u0646 \u0627\u0644\u062D\u064A\u0627\u0629',
+          '\u0631\u064A\u0627\u0636\u064A',
+          '\u0642\u0648\u0629 \u062E\u0627\u0631\u0642\u0629',
+          '\u0633\u062D\u0631\u064A',
+          '\u062A\u0627\u0631\u064A\u062E\u064A',
+          '\u0645\u064A\u0643\u0627',
+          '\u0648\u062D\u0648\u0634',
+          '\u0634\u0631\u064A\u062D\u0629 \u0645\u0646 \u0627\u0644\u062D\u064A\u0627\u0629',
+          '\u0641\u0636\u0627\u0621',
+          '\u0641\u0646\u0648\u0646 \u0642\u062A\u0627\u0644\u064A\u0629',
+          '\u0637\u0628\u062E',
+          '\u0634\u064A\u0627\u0637\u064A\u0646',
+          '\u0645\u0627\u0641\u064A\u0627',
+          '\u062D\u064A\u0627\u0629 \u0645\u062F\u0631\u0633\u064A\u0629'
+        ]
+      >;
+    Written_by: Attribute.String;
+    draw_by: Attribute.String;
+    team_name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -911,7 +888,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::category.category': ApiCategoryCategory;
       'api::manga-list.manga-list': ApiMangaListMangaList;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

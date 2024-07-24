@@ -4,8 +4,7 @@
   "info": {
     "singularName": "manga-list",
     "pluralName": "manga-lists",
-    "displayName": "manga_list",
-    "description": ""
+    "displayName": "manga_list"
   },
   "options": {
     "draftAndPublish": true
@@ -22,48 +21,17 @@
       "type": "string"
     },
     "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
-    },
-    "chapters": {
-      "type": "integer"
-    },
-    "Categories": {
-      "type": "customField",
-      "options": [
-        "اكشن ",
-        "غموض ",
-        "اثارة ",
-        "ون شوت",
-        "مغامرة",
-        "كوميديا",
-        "دراما",
-        "رعب",
-        "خيالي",
-        "خيال علمي",
-        "شريحة من الحياة",
-        "رياضي",
-        "قوة خارقة",
-        "آليين (ميكا)",
-        "سحر",
-        "تاريخي",
-        ""
       ],
-      "customField": "plugin::multi-select.multi-select"
+      "type": "media",
+      "multiple": false
     },
-    "color": {
-      "type": "enumeration",
-      "enum": [
-        "ملون",
-        "غير ملون"
-      ]
+    "story": {
+      "type": "blocks"
     },
     "type": {
       "type": "enumeration",
@@ -73,6 +41,56 @@
         "مانها"
       ]
     },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "ملون",
+        "غير ملون"
+      ]
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "مستمر",
+        "مكتمل",
+        "متوقف",
+        "ون شوت"
+      ]
+    },
+    "chapters": {
+      "type": "integer"
+    },
+    "Categories": {
+      "type": "customField",
+      "options": [
+        "شونين ",
+        "شوجو",
+        "سينين",
+        "أكشن",
+        "غموض",
+        "اثارة",
+        "مغامرة",
+        "كوميدي",
+        "جريمة",
+        "خيال علمي",
+        "رعب",
+        "شريحة من الحياة",
+        "رياضي",
+        "قوة خارقة",
+        "سحري",
+        "تاريخي",
+        "ميكا",
+        "وحوش",
+        "شريحة من الحياة",
+        "فضاء",
+        "فنون قتالية",
+        "طبخ",
+        "شياطين",
+        "مافيا",
+        "حياة مدرسية"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
     "Written_by": {
       "type": "string"
     },
@@ -81,18 +99,6 @@
     },
     "team_name": {
       "type": "string"
-    },
-    "state": {
-      "type": "enumeration",
-      "enum": [
-        "مستمر",
-        "متوقف",
-        "مكتمل",
-        "ون شوت"
-      ]
-    },
-    "story": {
-      "type": "blocks"
     }
   }
 }
