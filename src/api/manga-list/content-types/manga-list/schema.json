@@ -21,6 +21,9 @@
     "title_ar": {
       "type": "string"
     },
+    "title_eng": {
+      "type": "string"
+    },
     "cover": {
       "type": "media",
       "multiple": false,
@@ -109,6 +112,9 @@
     },
     "team_name": {
       "type": "string"
+    },
+    "row_link": {
+      "type": "text"
     }
   }
 }

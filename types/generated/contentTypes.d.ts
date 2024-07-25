@@ -377,6 +377,7 @@ export interface ApiMangaListMangaList extends Schema.CollectionType {
     title: Attribute.String;
     title_jpn: Attribute.String;
     title_ar: Attribute.String;
+    title_eng: Attribute.String;
     cover: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     story: Attribute.Blocks;
     type: Attribute.Enumeration<
@@ -443,6 +444,7 @@ export interface ApiMangaListMangaList extends Schema.CollectionType {
     Written_by: Attribute.String;
     draw_by: Attribute.String;
     team_name: Attribute.String;
+    row_link: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
