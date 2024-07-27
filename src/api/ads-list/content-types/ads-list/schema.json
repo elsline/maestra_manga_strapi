@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ads_lists",
+  "info": {
+    "singularName": "ads-list",
+    "pluralName": "ads-lists",
+    "displayName": "ads_list"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

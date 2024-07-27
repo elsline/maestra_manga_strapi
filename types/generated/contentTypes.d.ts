@@ -362,6 +362,37 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiAdsListAdsList extends Schema.CollectionType {
+  collectionName: 'ads_lists';
+  info: {
+    singularName: 'ads-list';
+    pluralName: 'ads-lists';
+    displayName: 'ads_list';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ads-list.ads-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ads-list.ads-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMangaListMangaList extends Schema.CollectionType {
   collectionName: 'manga_lists';
   info: {
@@ -899,6 +930,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::ads-list.ads-list': ApiAdsListAdsList;
       'api::manga-list.manga-list': ApiMangaListMangaList;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
