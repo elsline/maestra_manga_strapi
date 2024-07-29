@@ -65,7 +65,7 @@
     "chapters": {
       "type": "integer"
     },
-    "Categories": {
+    "categories": {
       "type": "customField",
       "options": [
         "شونين ",
@@ -100,7 +100,8 @@
         "مصاصي دماء",
         "رومانسي",
         "موسيقي",
-        "نفسي"
+        "نفسي",
+        "action"
       ],
       "customField": "plugin::multi-select.multi-select"
     },
