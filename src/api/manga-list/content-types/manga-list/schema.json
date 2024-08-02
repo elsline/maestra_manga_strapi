@@ -24,43 +24,32 @@
     "title_eng": {
       "type": "string"
     },
+    "title_kr": {
+      "type": "string"
+    },
+    "title_ch": {
+      "type": "string"
+    },
     "cover": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "story": {
       "type": "blocks"
     },
     "type": {
       "type": "enumeration",
-      "enum": [
-        "مانجا",
-        "مانهوا",
-        "مانها"
-      ]
+      "enum": ["مانجا", "مانهوا", "مانها"]
     },
     "color": {
       "type": "enumeration",
-      "enum": [
-        "ملون",
-        "غير ملون"
-      ]
+      "enum": ["ملون", "غير ملون"]
     },
     "state": {
       "type": "enumeration",
-      "enum": [
-        "مستمر",
-        "مكتمل",
-        "متوقف",
-        "ون شوت"
-      ]
+      "enum": ["مستمر", "مكتمل", "متوقف", "ون شوت"]
     },
     "chapters": {
       "type": "integer"
