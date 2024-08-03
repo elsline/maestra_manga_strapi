@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_chapters_chapters",
+  "info": {
+    "displayName": "chapter"
+  },
+  "options": {},
+  "attributes": {
+    "chapter_name": {
+      "type": "string"
+    },
+    "chapter_number": {
+      "type": "integer"
+    },
+    "colored": {
+      "type": "boolean"
+    },
+    "pages": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

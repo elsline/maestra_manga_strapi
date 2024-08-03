@@ -393,41 +393,6 @@ export interface ApiAdsListAdsList extends Schema.CollectionType {
   };
 }
 
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    manga_lists: Attribute.Relation<
-      'api::category.category',
-      'oneToMany',
-      'api::manga-list.manga-list'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiMangaListMangaList extends Schema.CollectionType {
   collectionName: 'manga_lists';
   info: {
@@ -444,6 +409,8 @@ export interface ApiMangaListMangaList extends Schema.CollectionType {
     title_jpn: Attribute.String;
     title_ar: Attribute.String;
     title_eng: Attribute.String;
+    title_kr: Attribute.String;
+    title_ch: Attribute.String;
     cover: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     story: Attribute.Blocks;
     type: Attribute.Enumeration<
@@ -467,7 +434,7 @@ export interface ApiMangaListMangaList extends Schema.CollectionType {
         '\u0648\u0646 \u0634\u0648\u062A'
       ]
     >;
-    chapters: Attribute.Integer;
+    chapters: Attribute.Component<'chapters.chapter', true>;
     categories: Attribute.JSON &
       Attribute.CustomField<
         'plugin::multi-select.multi-select',
@@ -967,7 +934,6 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::ads-list.ads-list': ApiAdsListAdsList;
-      'api::category.category': ApiCategoryCategory;
       'api::manga-list.manga-list': ApiMangaListMangaList;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
