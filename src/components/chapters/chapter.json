@@ -1,7 +1,8 @@
 {
   "collectionName": "components_chapters_chapters",
   "info": {
-    "displayName": "chapter"
+    "displayName": "chapter",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,14 +16,20 @@
       "type": "boolean"
     },
     "pages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "manga_lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::manga-list.manga-list"
     }
   }
 }
